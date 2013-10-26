@@ -1,4 +1,15 @@
 Mtm::Application.routes.draw do
+  resources :tasks
+  #setting root
+  root 'static_pages#home'
+
+  #setting up urls for static_pages
+  match '/about',    to: 'static_pages#about',    via: 'get'
+  match '/help',     to: 'static_pages#help',     via: 'get'
+  match '/contact',  to: 'static_pages#contact',  via: 'get'
+  match '/new',      to: 'tasks#new',             via: 'get'
+  match '/all_tasks',to: 'tasks#all_tasks',      via: 'get'
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

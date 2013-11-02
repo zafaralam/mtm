@@ -1,0 +1,12 @@
+== My Task Management (MTM)
+
+This a task managment app in RoR.
+
+Progress update:
+   - Created basic structure for the task is created.
+   - Adding new columns to the table (Do not run db:migrate). The 'tasks' table structure has not been competed yet.
+
+
+Project Goals:
+   - Learn ruby on rails.
+   - Create a useful app in the process to be used for furture task/project managment.

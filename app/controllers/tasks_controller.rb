@@ -8,8 +8,8 @@ class TasksController < ApplicationController
 		@task = Task.find(params[:id])
 	end
 
-	def all_tasks
-		@task = Task.find(:all)
+	def index
+		@task = Task.all
 	end
 
 	def create

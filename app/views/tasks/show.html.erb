@@ -3,4 +3,8 @@
 	<h4>Description: <%= @task.description %></h4>
 	<h4>Status: <%= @task.status %></h4>
 	<h4>Priority: <%= @task.priority %></h4>
-<div>
+	<div class="row">
+		<%= link_to 'Edit Task', edit_task_path(@task) %>
+		<%= button_to 'Delete Task', task_path(@task), :method => :delete, :confirm => 'Are you sure?'%>
+	</div>
+</div>

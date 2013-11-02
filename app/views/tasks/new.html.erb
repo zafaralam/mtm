@@ -1,4 +1,4 @@
-<h1>Add new task</h1>
+<h2>Add new task</h2>
 <div>
 	<%= form_for(@task) do |f| %>
 		<%= f.label :name %>
@@ -8,11 +8,12 @@
 		<%= f.text_field :description %>
 
 		<%= f.label :status %>
-		<%= f.text_field :status %>
+		<%= f.select :status, Task.all_status %>
 
 		<%= f.label :priority %>
-		<%= f.text_field :priority %>
+		<%= f.select :priority, Task.all_priorities %>
 
+		<%= link_to 'Cancel', tasks_path%>
 		<%= f.submit "Add Task" %>
 	<% end %>
 </div>

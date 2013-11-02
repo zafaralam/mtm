@@ -18,16 +18,21 @@
 
   	<%= stylesheet_link_tag    "application" %>
   	<%= javascript_include_tag "vendor/custom.modernizr" %>
-    <%= csrf_meta_tags %>
+    	<%= csrf_meta_tags %>
   </head>
 
   <body>
   
     <%= render 'layouts/header' %>
-    <%= render 'layouts/task_menu' %>
-
-    <%= yield %>
-    
+    <div class="row">
+	<div class="small-2 columns">
+		<!-- Need to add the logic to only add when user logged in -->
+    		<%= render 'layouts/task_menu' %>
+	</div>
+	<div class="small-10 columns">
+    		<%= yield %>
+	</div>
+    </div>
     <%= render 'layouts/footer' %>
     
     <%= javascript_include_tag "application" %>

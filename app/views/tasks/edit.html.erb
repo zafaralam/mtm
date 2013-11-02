@@ -1,0 +1,20 @@
+<h2>Edit Task</h2>
+
+<div>
+	<%= form_tag task_path(@task), :method => :put do %>
+		<%= label :task, :name, 'Task Name' %>
+		<%= text_field :task, :name  %>
+
+		<%= label :task, :description %>
+		<%= text_field :task, :description %>
+
+		<%= label :task, :status %>
+		<%= select :task, :status, Task.all_status %>
+
+		<%= label :task, :priority %>
+		<%= select :task,:priority, Task.all_priorities %>
+
+		<%= link_to 'Cancel', task_path(@task) %>
+		<%= submit_tag "Update Task" %>
+	<% end %>
+</div>

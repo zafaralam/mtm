@@ -1,10 +1,99 @@
-<div>
-	<h3>Name: <%= @task.name %></h3>
-	<h4>Description: <%= @task.description %></h4>
-	<h4>Status: <%= @task.status %></h4>
-	<h4>Priority: <%= @task.priority %></h4>
-	<div class="row">
-		<%= link_to 'Edit Task', edit_task_path(@task) %>
-		<%= button_to 'Delete Task', task_path(@task), :method => :delete, :confirm => 'Are you sure?'%>
+<div class="row">
+	<div class="small-6 columns">
+		<h4 class="subheader"><b><%= @task.name %></b></h4>
+	</div>
+	<div class="small-6 columns">
+		<div class="row">
+			<div class="small-12 columns">Delivery Date:<%= @task.delivery_date.strftime(" %d-%b-%Y") unless @task.delivery_date.nil? %></div>
+		</div>
+		
+		<div class="row">
+			<div class="small-12 columns">Created:<%= @task.created_at.strftime(" %d-%b-%Y") %></div>
+		</div>
+
+		<div class="row">
+			<div class="small-12 columns">Last updated:<%= @task.updated_at.strftime(" %d-%b-%Y") %></div>
+		</div>
+	</div>
+</div>
+<!-- Status & Priority -->
+<div class="row">
+	<div class="small-6 columns">
+		<div class="row">
+			<div class="small-2 columns"><b>Status:</b></div>
+			<div class="small-10 columns"><%= @task.status %></div>
+		</div>
+	</div>
+	<div class="small-6 columns">
+		<div class="row">
+			<div class="small-2 columns"><b>Priority:</b></div>
+			<div class="small-10 columns"><%= @task.priority %></div>
+		</div>
+	</div>
+</div>
+
+<!-- Created by & Assigned to -->
+<div class="row">
+	<div class="small-6 columns">
+		<div class="row">
+			<div class="small-4 columns"><b>Created by:</b></div>
+			<div class="small-8 columns"><%= @task.created_by %></div>
+		</div>
+	</div>
+	<div class="small-6 columns">
+		<div class="row">
+			<div class="small-4 columns"><b>Assigned to:</b></div>
+			<div class="small-8 columns"><%= @task.assigned_to %></div>
+		</div>
+	</div>
+</div>
+
+<!-- Category & Sub-category -->
+<div class="row">
+	<div class="small-6 columns">
+		<div class="row">
+			<div class="small-4 columns"><b>Category:</b></div>
+			<div class="small-8 columns"><%= @task.category %></div>
+		</div>
+	</div>
+	<div class="small-6 columns">
+		<div class="row">
+			<div class="small-6 columns"><b>Sub-category:</b></div>
+			<div class="small-6 columns"><%= @task.sub_category %></div>
+		</div>
+	</div>
+</div>
+
+<!---Estimated hours & Actual hours -->
+<div class="row">
+	<div class="small-6 columns">
+		<div class="row">
+			<div class="small-5 columns"><b>Estimated Hrs:</b></div>
+			<div class="small-7 columns"><%= @task.estimated_hours %></div>
+		</div>
+	</div>
+	<div class="small-6 columns">
+		<div class="row">
+			<div class="small-4 columns"><b>Actual Hrs:</b></div>
+			<div class="small-8 columns"><%= @task.actual_hours %></div>
+		</div>
+	</div>
+</div>
+
+<!--Description -->
+<div class="row">
+	<b class="large-2 columns">Description:</b>
+	<div class="large-10 columns">
+		<%= @task.description %>
+	</div>
+</div>
+<div class="row">
+	<div class="large-12 columns">
+		<%= link_to 'Edit Task', edit_task_path(@task), :class => "" %>
+	</div>
+</div>
+<div class="row">
+	<div class="large-12 columns">
+		<%= button_to 'Delete Task', task_path(@task), :method => :delete, :confirm => 'Are you sure?', :class => "" %>
 	</div>
 </div>

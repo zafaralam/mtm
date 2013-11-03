@@ -11,15 +11,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131018075054) do
+ActiveRecord::Schema.define(version: 20131102084249) do
 
   create_table "tasks", force: true do |t|
     t.string   "name"
-    t.string   "description"
+    t.text     "description",     limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "status"
     t.string   "priority"
+    t.string   "category"
+    t.string   "sub_category"
+    t.string   "created_by"
+    t.string   "assigned_to"
+    t.decimal  "estimated_hours"
+    t.decimal  "actual_hours"
+    t.datetime "completion_date"
+    t.datetime "delivery_date"
+    t.text     "notes"
   end
 
 end

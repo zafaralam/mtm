@@ -30,7 +30,7 @@ class TasksController < ApplicationController
 		# first get the task that needs to be edited
 		@task = Task.find params[:id]
 		
-		#update the attributes of the task
+		#update the attributes of the task inside the database.
 		@task.update_attributes(user_params)
 		
 		redirect_to task_path @task.id
@@ -43,8 +43,10 @@ class TasksController < ApplicationController
 	end
 
 	private
+		
+		# The method below is used to permit params passed in rails via the url
 		def user_params
-			params.require(:task).permit(:name, :description, :status, :priority)
+			params.require(:task).permit(:name, :description, :status, :priority,:created_by,:assigned_to,:estimated_hours,:actual_hours,:category,:sub_category)
 		end
 
 

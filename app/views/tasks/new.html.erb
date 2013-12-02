@@ -1,37 +1,39 @@
 <h2>Add new task</h2>
 <div>
-	<%= form_for(@task) do |f| %>
-		<%= f.label :name %>
-		<%= f.text_field :name %>
+  <%= form_for(@task) do |f| %>
+          
+    <%= f.label :name %>
+    <%= f.text_field :name %>
 
-		<%= f.label :status %>
-		<%= f.select :status, Task.all_status %>
+    <%= f.label :status %>
+    <%= f.select :status, Task.all_status %>
 
-		<%= f.label :priority %>
-		<%= f.select :priority, Task.all_priorities %>
+    <%= f.label :priority %>
+    <%= f.select :priority, Task.all_priorities %>
 
-		<%= f.label :created_by %>
-		<%= f.text_field :created_by  %>
+    <%= f.label :created_by %>
+    <%= f.text_field :created_by  %>
 
-		<%= f.label :assigned_to %>
-		<%= f.text_field :assigned_to %>
+    <%= f.label :assigned_to %>
+    <%= f.text_field :assigned_to %>
 
-		<%= f.label :category %>
-		<%= f.select :category, ['A','B','C','D','E']  %>
+    <%= f.label :category %>
+    <%= f.select :category, ['A','B','C','D','E']  %>
 
-		<%= f.label :sub_category %>
-		<%= f.select :sub_category, ['Z','Y','X','W','V']  %>
+    <%= f.label :sub_category %>
+    <%= f.select :sub_category, ['Z','Y','X','W','V']  %>
 
-		<%= f.label :estimated_hours %>
-		<%= f.text_field :estimated_hours  %>
+    <%= f.label :estimated_hours %>
+    <%= f.text_field :estimated_hours  %>
 
-		<%= f.label :actual_hours %>
-		<%= f.text_field :actual_hours  %>
+    <%= f.label :actual_hours %>
+    <%= f.text_field :actual_hours  %>
 
-		<%= f.label :description %>
-		<%= f.text_area :description, size: "24x6" %>
+    <%= f.label :description %>
+    <%= f.text_area :description, size: "24x6" %>
 
-		<%= link_to 'Cancel', tasks_path%>
-		<%= f.submit "Add Task" %>
-	<% end %>
+    <%= link_to 'Cancel', tasks_path%>
+    <%= f.submit "Add Task" %>
+
+  <% end %>
 </div>

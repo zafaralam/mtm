@@ -1,37 +1,37 @@
 <h4 class="subheader">Edit Task</h4>
 <div>
-	<%= form_tag task_path(@task), :method => :put do %>
-		<%= label :task, :name, 'Task Name' %>
-		<%= text_field :task, :name  %>
+  <%= form_tag task_path(@task), :method => :put do %>
+    <%= label :task, :name, 'Task Name' %>
+    <%= text_field :task, :name  %>
 
-		<%= label :task, :status %>
-		<%= select :task, :status, Task.all_status %>
+    <%= label :task, :status %>
+    <%= select :task, :status, Task.all_status %>
 
-		<%= label :task, :priority %>
-		<%= select :task,:priority, Task.all_priorities %>
+    <%= label :task, :priority %>
+    <%= select :task,:priority, Task.all_priorities %>
 
-		<%= label :task, :created_by %>
-		<%= text_field :task, :created_by  %>
+    <%= label :task, :created_by %>
+    <%= text_field :task, :created_by  %>
 
-		<%= label :task, :assigned_to %>
-		<%= text_field :task, :assigned_to %>
+    <%= label :task, :assigned_to %>
+    <%= text_field :task, :assigned_to %>
 
-		<%= label :task, :category %>
-		<%= select :task, :category, ['A','B','C','D','E']  %>
+    <%= label :task, :category %>
+    <%= select :task, :category, ['A','B','C','D','E']  %>
 
-		<%= label :task, :sub_category %>
-		<%= select :task, :sub_category, ['Z','Y','X','W','V']  %>
+    <%= label :task, :sub_category %>
+    <%= select :task, :sub_category, ['Z','Y','X','W','V']  %>
 
-		<%= label :task, :estimated_hours %>
-		<%= text_field :task, :estimated_hours  %>
+    <%= label :task, :estimated_hours %>
+    <%= text_field :task, :estimated_hours  %>
 
-		<%= label :task, :actual_hours %>
-		<%= text_field :task, :actual_hours  %>
+    <%= label :task, :actual_hours %>
+    <%= text_field :task, :actual_hours  %>
 
-		<%= label :task, :description %>
-		<%= text_area :task, :description, size: "24x6" %>
+    <%= label :task, :description %>
+    <%= text_area :task, :description, size: "24x6" %>
 
-		<%= link_to 'Cancel', task_path(@task) %>
-		<%= submit_tag "Update Task" %>
-	<% end %>
+    <%= link_to 'Cancel', task_path(@task) %>
+    <%= submit_tag "Update Task" %>
+  <% end %>
 </div>

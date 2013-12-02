@@ -1,20 +1,25 @@
-<table>
-	<thead>
-		<tr>
-			<th width='200'>Task Name</th>
-			<th width='150'>Status</th>
-			<th width='150'>Priority</th>
-			<th width='150'>Actions</th>
-		</tr>
-	</thead>
-	<tbody>
-		<% @tasks.each do |task| %>
-			<tr>
-				<td><%= link_to "#{task.name}", task_path(task) %></td>
-				<td><%= task.status %></td>
-				<td><%= task.priority %></td>
-				<td><%= link_to 'Edit', edit_task_path(task) %> | <%= link_to 'Remove', task_path(task), :method => :delete, :confirm => 'Are you sure?' %></td>
-			</tr>
-		<% end %>
-	</tbody>
-</table>
+<% # need to fix the padding on the top %>
+<div class="row">
+  <div class="large-12 columns">
+    <table>
+      <thead>
+        <tr>
+        <th width='200'>Task Name</th>
+        <th width='150'>Status</th>
+        <th width='150'>Priority</th>
+        <th width='150'>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @tasks.each do |task| %>
+          <tr>
+            <td><%= link_to "#{task.name}", task_path(task) %></td>
+            <td><%= task.status %></td>
+            <td><%= task.priority %></td>
+            <td><%= link_to 'Edit', edit_task_path(task) %> | <%= link_to 'Delete', task_path(task), :method => :delete, :confirm => 'Are you sure?' %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

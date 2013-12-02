@@ -30,7 +30,8 @@ gem 'jbuilder', '1.0.2'
 
 #Foundation gem
 gem 'compass-rails'
-gem 'zurb-foundation'
+gem 'foundation-rails'
+#gem 'zurb-foundation'
 
 
 group :doc do

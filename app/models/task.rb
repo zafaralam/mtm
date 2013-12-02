@@ -1,4 +1,7 @@
 class Task < ActiveRecord::Base
+  
+  belongs_to :project
+
   def self.all_status
     ["Pending","Open","Closed","Completed","In Progress"]
   end

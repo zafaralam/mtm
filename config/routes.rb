@@ -1,5 +1,5 @@
 Mtm::Application.routes.draw do
-  resources :tasks
+  resources :tasks, :projects
   #setting root
   root 'static_pages#home'
 
